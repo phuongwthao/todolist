@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div class="page">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5xDoND5JqJHEhDRRkM5EAfwZv5fXnRohk9M20FB1JRxPQsSIXTalM8KkFZrvxcCXhaLE&usqp=CAU" alt="">
+        <div class="modal Add">
+            <div class="modal-content">
+                <form action="" style="font-size: 20px;">
+                    <p><input type="text" placeholder="Enter new to-do" id="textInput" style="font-size: 15px;"></p>
+                    <br>
+                    <p><input type="datetime-local" id="timeInput" style="font-size: 15px;"></p>
+                    <br>
+                    <button type="submit" class="add" style="margin-right: 30px;font-size: 15px">Add</button>
+                    <button class="cancel" style="font-size: 15px;"> Cancel</button>
+                </form>
+
+            </div>
+        </div>
+
+        <div class="modal Edit">
+            <div class="modal-content">
+                <p><input type="text" id="textEdit" style="font-size: 15px;"></p>
+                <br>
+                <p><input type="datetime-local" id="timeEdit" style="font-size: 15px;"></p>
+                <br>
+                <button type="submit" class="save"style="margin-right: 30px;font-size: 15px;">Save</button>
+                <button class="cancel"style="font-size: 15px;">Cancel</button>
+            </div>
+        </div>
+
+        <div class="main">
+            <div>
+                <h1>My To Do List</h1>
+            </div>
+            <div class="darkmode">
+                <label id="dark-change"></label>
+            </div>
+
+            <div class="menu"  >
+                
+                <div class="addTask">
+                    <button>
+                        <i class="fas fa-plus-circle" ></i>
+                    </button>
+                    <span style="font-weight: bold;">Add Task</span>
+                </div>
+
+                <div class="filter">
+                    <select name="" id="filter">
+                        <option value="all">Tất Cả</option>
+                        <option value="phailam">Phải Làm</option>
+                        <option value="phaidilamngay">Phải đi làm ngay</option>
+                        <option value="chillchill">Chill Chill</option>
+                    </select>
+                </div>
+            </div>
+            <div class="contain">
+                <ul class="todos">
+                </ul>  
+            </div>
+
+           
+        </div>
+
+    </div>
+</body>
+<script src="./index.js"></script>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="page">
+        <div class="login">
+            <div class="head_login">
+                <p>Login TodoList</p>
+            </div>
+            <div class="rabbit">
+                <img src="https://i.pinimg.com/originals/57/90/05/579005d6c9470c715c613d0ceaaf1878.png" alt="">
+            </div>
+           
+            <div class="contain_login">
+               <form action="">
+
+                <i class="fas fa-user"></i>
+
+                    <input type="text" name="" id="" class="username" placeholder="username">
+                    <i class="fas fa-unlock-alt"></i>
+                    <input type="password" class="password" placeholder="password">
+                    <br>
+                    <button type="submit" class="submit">
+                        <span>Login</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let username = document.querySelector('.username')
+        let password = document.querySelector('.password')
+        let submit = document.querySelector('.submit')
+
+        function checkLogin(name,pass){
+           let apiurl = "https://64df39cc71c3335b258249fa.mockapi.io/api/1/account"
+           fetch(apiurl)
+           .then(response=>response.json())
+           .then(data=>{
+            let check = data.find((item)=>{
+                return item.username === name && item.password===pass
+            })
+            if(check){
+                window.location.href="./index.html"
+            }
+            else{
+                alert('Nhập sai mất rùi')
+               
+            }
+           })
+
+        }
+
+        submit.addEventListener('click',(event)=>{
+             event.preventDefault();
+             checkLogin(username.value,password.value)
+           
+        })
+    </script>
+   
+    
+</body>
+</html>
